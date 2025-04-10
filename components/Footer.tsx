@@ -31,19 +31,6 @@ export function FooterImpl() {
         Copyright {currentYear} Nomad Nugget
       </div>
 
-      <div className={styles.settings}>
-        {hasMounted && (
-          <a
-            className={styles.toggleDarkMode}
-            href='#'
-            role='button'
-            onClick={onToggleDarkMode}
-            title='Toggle dark mode'
-          >
-            {isDarkMode ? <FaEnvelopeOpenText /> : <FaEnvelopeOpenText />}
-          </a>
-        )}
-      </div>
 
       <div className={styles.social}>
         {config.blog && (
