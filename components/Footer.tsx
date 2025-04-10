@@ -1,10 +1,11 @@
-import { FaInstagram } from '@react-icons/all-files/fa/FaInstagram'
-import { FaYoutube } from '@react-icons/all-files/fa/FaYoutube'
-import * as React from 'react'
+import { FaEnvelopeOpenText } from '@react-icons/all-files/fa/FaEnvelopeOpenText';
+import { FaInstagram } from '@react-icons/all-files/fa/FaInstagram';
+import { FaYoutube } from '@react-icons/all-files/fa/FaYoutube';
+import * as React from 'react';
 
-import * as config from '@/lib/config'
+import * as config from '@/lib/config';
 
-import styles from './styles.module.css'
+import styles from './styles.module.css';
 
 export function FooterImpl() {
   return (
@@ -51,7 +52,7 @@ export function FooterImpl() {
         )}
       </div>
     </footer>
-  )
+  );
 }
 
-export const Footer = React.memo(FooterImpl)
+export const Footer = React.memo(FooterImpl);
