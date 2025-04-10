@@ -1,14 +1,6 @@
-import { FaBlog } from '@react-icons/all-files/fa/FaBlog' // 블로그 아이콘 추가
-import { FaEnvelopeOpenText } from '@react-icons/all-files/fa/FaEnvelopeOpenText'
-import { FaGithub } from '@react-icons/all-files/fa/FaGithub'
 import { FaInstagram } from '@react-icons/all-files/fa/FaInstagram'
-import { FaLinkedin } from '@react-icons/all-files/fa/FaLinkedin'
-import { FaMastodon } from '@react-icons/all-files/fa/FaMastodon'
-import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter'
 import { FaYoutube } from '@react-icons/all-files/fa/FaYoutube'
-import { FaZhihu } from '@react-icons/all-files/fa/FaZhihu'
-import { IoMoonSharp } from '@react-icons/all-files/io5/IoMoonSharp'
-import { IoSunnyOutline } from '@react-icons/all-files/io5/IoSunnyOutline'
+import { FaBlog } from '@react-icons/all-files/fa/FaBlog'  // 블로그 아이콘 추가
 import * as React from 'react'
 
 import * as config from '@/lib/config'
@@ -36,58 +28,59 @@ export function FooterImpl() {
   return (
     <footer className={styles.footer}>
       <div className={styles.copyright}>
-        Copyright 2025 Nomad Nugget
+        Copyright {currentYear} Nomad Nugget
       </div>
 
       <div className={styles.settings}>
         {hasMounted && (
           <a
             className={styles.toggleDarkMode}
-            href="#"
-            role="button"
+            href='#'
+            role='button'
             onClick={onToggleDarkMode}
-            title="Toggle dark mode"
+            title='Toggle dark mode'
           >
-            {isDarkMode ? <IoMoonSharp /> : <IoSunnyOutline />}
+            {isDarkMode ? <FaEnvelopeOpenText /> : <FaEnvelopeOpenText />}
           </a>
         )}
       </div>
 
       <div className={styles.social}>
-        {/* Blog */}
-        <a
-          className={styles.blog}
-          href="http://blog.naver.com/heathertour"
-          title="Blog"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaBlog /> {/* Blog 아이콘 */}
-        </a>
+        {config.blog && (
+          <a
+            className={styles.blog}
+            href={http://blog.naver.com/heathertour}
+            title={`Blog`}
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <FaBlog />
+          </a>
+        )}
 
-        {/* Instagram */}
-        <a
-          className={styles.instagram}
-          href="http://instagram.com/nomad_nugget_"
-          title="Instagram"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaInstagram />
-        </a>
+        {config.instagram && (
+          <a
+            className={styles.instagram}
+            href={http://instagram.com/nomad_nugget_}
+            title={`Instagram`}
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <FaInstagram />
+          </a>
+        )}
 
-        {/* Youtube */}
-        <a
-          className={styles.youtube}
-          href="https://youtube.com/@nomadnugget?si=oCHaVs2Hah4J85VH"
-          title="YouTube"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaYoutube />
-        </a>
-
-        {/* 추가적인 소셜 링크가 필요하면 여기에 추가하시면 됩니다 */}
+        {config.youtube && (
+          <a
+            className={styles.youtube}
+            href={https://youtube.com/@nomadnugget?si=mRL8XXCZocTyYukm}
+            title={`YouTube`}
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <FaYoutube />
+          </a>
+        )}
       </div>
     </footer>
   )
