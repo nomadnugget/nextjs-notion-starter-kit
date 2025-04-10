@@ -1,5 +1,7 @@
+import { FaBlog } from '@react-icons/all-files/fa/FaBlog' // 블로그 아이콘 추가
 import { FaEnvelopeOpenText } from '@react-icons/all-files/fa/FaEnvelopeOpenText'
 import { FaGithub } from '@react-icons/all-files/fa/FaGithub'
+import { FaInstagram } from '@react-icons/all-files/fa/FaInstagram'
 import { FaLinkedin } from '@react-icons/all-files/fa/FaLinkedin'
 import { FaMastodon } from '@react-icons/all-files/fa/FaMastodon'
 import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter'
@@ -13,8 +15,6 @@ import * as config from '@/lib/config'
 import { useDarkMode } from '@/lib/use-dark-mode'
 
 import styles from './styles.module.css'
-
-// TODO: merge the data and icons from PageSocial with the social links in Footer
 
 export function FooterImpl() {
   const [hasMounted, setHasMounted] = React.useState(false)
@@ -36,17 +36,17 @@ export function FooterImpl() {
   return (
     <footer className={styles.footer}>
       <div className={styles.copyright}>
-        Copyright {currentYear} {config.author}
+        Copyright 2025 Nomad Nugget
       </div>
 
       <div className={styles.settings}>
         {hasMounted && (
           <a
             className={styles.toggleDarkMode}
-            href='#'
-            role='button'
+            href="#"
+            role="button"
             onClick={onToggleDarkMode}
-            title='Toggle dark mode'
+            title="Toggle dark mode"
           >
             {isDarkMode ? <IoMoonSharp /> : <IoSunnyOutline />}
           </a>
@@ -54,88 +54,40 @@ export function FooterImpl() {
       </div>
 
       <div className={styles.social}>
-        {config.twitter && (
-          <a
-            className={styles.twitter}
-            href={`https://twitter.com/${config.twitter}`}
-            title={`Twitter @${config.twitter}`}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <FaTwitter />
-          </a>
-        )}
+        {/* Blog */}
+        <a
+          className={styles.blog}
+          href="http://blog.naver.com/heathertour"
+          title="Blog"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaBlog /> {/* Blog 아이콘 */}
+        </a>
 
-        {config.mastodon && (
-          <a
-            className={styles.mastodon}
-            href={config.mastodon}
-            title={`Mastodon ${config.getMastodonHandle()}`}
-            rel='me'
-          >
-            <FaMastodon />
-          </a>
-        )}
+        {/* Instagram */}
+        <a
+          className={styles.instagram}
+          href="http://instagram.com/nomad_nugget_"
+          title="Instagram"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaInstagram />
+        </a>
 
-        {config.zhihu && (
-          <a
-            className={styles.zhihu}
-            href={`https://zhihu.com/people/${config.zhihu}`}
-            title={`Zhihu @${config.zhihu}`}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <FaZhihu />
-          </a>
-        )}
+        {/* Youtube */}
+        <a
+          className={styles.youtube}
+          href="https://youtube.com/@nomadnugget?si=oCHaVs2Hah4J85VH"
+          title="YouTube"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaYoutube />
+        </a>
 
-        {config.github && (
-          <a
-            className={styles.github}
-            href={`https://github.com/${config.github}`}
-            title={`GitHub @${config.github}`}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <FaGithub />
-          </a>
-        )}
-
-        {config.linkedin && (
-          <a
-            className={styles.linkedin}
-            href={`https://www.linkedin.com/in/${config.linkedin}`}
-            title={`LinkedIn ${config.author}`}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <FaLinkedin />
-          </a>
-        )}
-
-        {config.newsletter && (
-          <a
-            className={styles.newsletter}
-            href={`${config.newsletter}`}
-            title={`Newsletter ${config.author}`}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <FaEnvelopeOpenText />
-          </a>
-        )}
-
-        {config.youtube && (
-          <a
-            className={styles.youtube}
-            href={`https://www.youtube.com/${config.youtube}`}
-            title={`YouTube ${config.author}`}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <FaYoutube />
-          </a>
-        )}
+        {/* 추가적인 소셜 링크가 필요하면 여기에 추가하시면 됩니다 */}
       </div>
     </footer>
   )
