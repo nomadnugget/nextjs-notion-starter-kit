@@ -57,10 +57,12 @@ export const language: string = getSiteConfig('language', 'en')
 export const twitter: string | null = getSiteConfig('twitter', null)
 export const mastodon: string | null = getSiteConfig('mastodon', null)
 export const github: string | null = getSiteConfig('github', null)
-export const youtube: string | null = getSiteConfig('youtube', null)
 export const linkedin: string | null = getSiteConfig('linkedin', null)
 export const newsletter: string | null = getSiteConfig('newsletter', null)
 export const zhihu: string | null = getSiteConfig('zhihu', null)
+export const blog: string | null = "http://blog.naver.com/heathertour";  // 블로그 주소
+export const instagram: string | null = "http://instagram.com/nomad_nugget_";  // 인스타그램 주소
+export const youtube: string | null = "https://youtube.com/@nomadnugget?si=oCHaVs2Hah4J85VH";  // 유튜브 주소
 
 export const getMastodonHandle = (): string | null => {
   if (!mastodon) {

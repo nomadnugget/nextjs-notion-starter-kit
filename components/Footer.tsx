@@ -49,7 +49,7 @@ export function FooterImpl() {
         {config.blog && (
           <a
             className={styles.blog}
-            href={http://blog.naver.com/heathertour}
+            href={config.blog}
             title={`Blog`}
             target='_blank'
             rel='noopener noreferrer'
@@ -61,7 +61,7 @@ export function FooterImpl() {
         {config.instagram && (
           <a
             className={styles.instagram}
-            href={http://instagram.com/nomad_nugget_}
+            href={config.instagram}
             title={`Instagram`}
             target='_blank'
             rel='noopener noreferrer'
@@ -73,7 +73,7 @@ export function FooterImpl() {
         {config.youtube && (
           <a
             className={styles.youtube}
-            href={https://youtube.com/@nomadnugget?si=mRL8XXCZocTyYukm}
+            href={config.youtube}
             title={`YouTube`}
             target='_blank'
             rel='noopener noreferrer'
