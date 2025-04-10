@@ -1,6 +1,7 @@
 {
   "root": true,
   "extends": ["@fisch0920/eslint-config"],
+  "plugins": ["simple-import-sort"], // 추가된 부분
   "rules": {
     "react/prop-types": "off",
     "unicorn/no-array-reduce": "off",
@@ -12,6 +13,8 @@
     "jsx-a11y/media-has-caption": "off",
     "jsx-a11y/interactive-supports-focus": "off",
     "jsx-a11y/anchor-is-valid": "off",
-    "@typescript-eslint/naming-convention": "off"
+    "@typescript-eslint/naming-convention": "off",
+    "simple-import-sort/imports": "error", // 추가된 부분
+    "simple-import-sort/exports": "error"  // 추가된 부분
   }
 }
